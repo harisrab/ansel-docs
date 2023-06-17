@@ -1,0 +1,59 @@
+---
+title: "Release notes"
+description: "We're shipping features fast, building an operating system for governence."
+---
+
+---
+
+## 17th July 2023
+
+Version 1.1
+
+<Frame type="glass">
+  <img style={{ borderRadius: "0.5rem" }} src="/images/v1.1.png" />
+</Frame>
+
+This release is a major as it involves a number of improvements to the user experience when querying data sources using WhatsApp interface. It eliminates majority of errors, where LLM used to respond with no-information. Most queries to webpage data sources used to timeout, but now we've implemented a new backend design that allows for rapid and comprehensive response everytime a user asks a relevent question.
+
+**Data Source Module:**
+
+- Allows for adding and removing custom webpages that are automatically indexed in Vector database for LLM retrieval.
+- Indicators for the status of indexing state of all webpages.
+- Added support for connecting multiple modules for `Webpage Data Sources`.
+
+**New Features and Bug Fixes:**
+
+- Added OpenAI's GPT-4 Support.
+- Responds to queries running longer than 30s.
+- Cleaned up entire database for 3 major clinics in Hong Kong, significantly improving database operations using LLMs.
+- Incorporated support to query Webpages and SQL databases simultaneously using a more complex question that requires a chain of thought and extraction of data from multiple sources.
+- Eliminating majority user side errors when querying Doctor's Database through use of improved prompt engineering for dealing with `SQL Database Module`.
+- Indicator on WhatsApp if the message takes longer than 15s to be delivered. (Better mechanism in-loop).
+- Improved backend capacity for handling larger data sources (150 comprehensive records of doctors phone numbers, emails, bio, expertise, etc + multiple blocks of webpages).
+- Save application with `CMD + S` on MacOS with live syncing.
+
+---
+
+## 12th July 2023
+
+Version 1.0
+
+<Frame type="glass">
+  <img style={{ borderRadius: "0.5rem" }} src="/images/v1.0_image.jpg" />
+</Frame>
+
+**New features:**
+
+- Drag and drop functionality for easily arranging and connecting pre-built modules.
+- The first iteration of a no-code platform that allows you to connect different:
+
+  - Data sources: (Custom Webpages and SQL databases)
+  - LLMs: Only ChatGPT Supported
+  - A single WhatsApp interface for communication with ChatGPT
+
+- Complete traversal of a graph based structure that prepares ground for customized orchestration of data sources, tools, and communication interfaces with LLMs.
+- Setup of exchanging WhatsApp message by requistioning phone number on demand.
+- Built functionality for adding more phone numbers if needed based on demand.
+- Scrapped and collected raw data for 3 clinics in Hong Kong. Available on Google Sheets + Remote SQL database.
+
+---
