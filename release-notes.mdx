@@ -3,40 +3,107 @@ title: "Release notes"
 description: "We're shipping features fast, building an operating system for governence."
 ---
 
+
 ---
-
-## 17th July 2023
-
-Version 1.1
+## Release 1.1: Major Improvements for Interrogating Complex Databases and more
+##### Release date: 18th July 2023
+---
 
 <Frame type="glass">
   <img style={{ borderRadius: "0.5rem" }} src="/images/v1.1.png" />
 </Frame>
 
-This release is a major as it involves a number of improvements to the user experience when querying data sources using WhatsApp interface. It eliminates majority of errors, where LLM used to respond with no-information. Most queries to webpage data sources used to timeout, but now we've implemented a new backend design that allows for rapid and comprehensive response everytime a user asks a relevent question.
+For clinical operations, this release involves a number of improvements for greater user experience when querying the agent using WhatsApp interface. This eliminates majority of errors altogether.
 
-**Data Source Module:**
+### New Features and Bug Fixes
 
+- Added OpenAI's GPT-4 Support.
+- Responds to queries running longer than 30s.
+- Queries that used to take more than 1 minute, usually now take 5 - 10 seconds (Seperated query engines + customized prompting + debugged unncessary chain of thought).
+- Open internet access available. It can talk about various clinics, emergency hotlines, locations, etc.
+- Saves chat history allowing referencing back to previous questions.
+- Cleaned up entire database for 3 major clinics in Hong Kong, significantly improving database operations using LLMs.
+- Incorporated (RAG - Retrieval Augmented Generation)[https://arxiv.org/abs/2005.11401] support to query Webpages and SQL databases simultaneously using a more complex question that requires a chain of thought and extraction of data from multiple sources.
+- Eliminating majority user side errors when querying Doctor's Database through use of improved prompt engineering for dealing with `SQL Database Module`.
+- `Please wait, I'm thinking ...` Indicator on WhatsApp if the message takes longer than 15s to be delivered. (Better mechanism in-loop).
+- Improved backend capacity for handling larger data sources (150 comprehensive records of doctors phone numbers, emails, bio, expertise, etc + multiple blocks of webpages).
+- Save application with `CMD + S` on MacOS with live syncing.
+
+### Answer questions like
+
+<AccordionGroup>
+  <Accordion title="Tell me more about Pedder Health and give me a brief background on this clinic.">
+   Pedder Health is a healthcare provider that offers a wide range of surgical specialties. Some of these specialties include breast surgery, cardiothoracic surgery, colorectal surgery, endocrine surgery, and more. They are dedicated to providing quality healthcare services to their patients.
+  </Accordion>
+
+{" "}
+<Accordion title="Can u find me doctors who have expertise in general cardiology?">
+  One doctor with expertise in general cardiology is Dr. Kelvin K.W. Chan. His
+  specialization includes assessment and management of cardiovascular risk
+  factors (such as hypertension, diabetes, hypercholesterolemia, and fatty
+  liver), structural heart disease, valvular heart disease, and heart failure.
+  Dr. Chan also provides pre-operative cardiovascular assessment prior to
+  non-cardiac surgery for cardiac risk stratification and offers consultations
+  for internal medicine issues.
+</Accordion>
+
+{" "}
+<Accordion title="Give me the phone number of Professor To Kelvin and also give me his profile page?">
+  The phone number of Professor To Kelvin is +852-2255-2412, and his profile
+  page can be found at
+  https://hkuhs.med.hku.hk/en/Health%20System/Homepage/Our%20Professional/Professor%20To%20Kai%20Wang%20Kelvin.
+</Accordion>
+
+  <Accordion title="Can you give me a list of institutions he is affiliated with?">
+    Professor To Kelvin is affiliated with the following institutions:
+
+1. The University of Hong Kong (HKU): He is a professor at HKU and is involved with the Department of Medicine and the Li Ka Shing Faculty of Medicine.
+
+2. Queen Mary Hospital: Professor To Kelvin serves as a consultant at Queen Mary Hospital, which is affiliated with the University of Hong Kong.
+
+These are just a few examples of the institutions with which Professor To Kelvin is affiliated.
+
+  </Accordion>
+
+  <Accordion title="Give me a few doctors who have expertise in dealing with stroke patients.">
+
+    Here are three doctors with expertise in dealing with stroke patients:
+
+1. Dr. Kelvin K.W. Chan: His expertise includes General Cardiology and Internal Medicine. He focuses on the assessment and management of cardiovascular risk factors such as hypertension, diabetes, hypercholesterolemia, and fatty liver. Dr. Chan also provides consultation for internal medicine issues.
+
+2. Dr. Chan Kwan Hon: His expertise covers the management of head injuries, neurovascular surgery, brain tumor surgery, and functional neurosurgery. Dr. Chan specializes in craniotomy for hematoma evacuation, treatment of craniofacial injuries, cranial reconstruction, and more.
+
+3. Professor Ho, Shu Leong: He specializes in Neurology, diagnosing and treating conditions such as epilepsy, stroke, and multiple sclerosis. Professor Ho uses various tests, like EEGs, to assess neurological conditions and collaborates with other specialists to provide comprehensive care for patients with neurological disorders.
+
+  </Accordion>
+
+{" "}
+<Accordion title="Give me all doctors who's name includes Gary.">
+  There are two doctors with "Gary" in their name: Dr. Gary K.K. Yip and Dr Lau,
+  Kui Kai Gary.
+</Accordion>
+
+</AccordionGroup>
+
+
+
+### LLM Modules (Tools, Data sources, User Interfaces)
+Data sources - webpages:
 - Allows for adding and removing custom webpages that are automatically indexed in Vector database for LLM retrieval.
 - Indicators for the status of indexing state of all webpages.
 - Added support for connecting multiple modules for `Webpage Data Sources`.
 
-**New Features and Bug Fixes:**
+Tools - open internet access:
+- Now you can openly talk to internet and ask the chatbot about current events, locations of hospitals, hotlines, and much more.
 
-- Added OpenAI's GPT-4 Support.
-- Responds to queries running longer than 30s.
-- Cleaned up entire database for 3 major clinics in Hong Kong, significantly improving database operations using LLMs.
-- Incorporated (RAG - Retrieval Augmented Generation) support to query Webpages and SQL databases simultaneously using a more complex question that requires a chain of thought and extraction of data from multiple sources.
-- Eliminating majority user side errors when querying Doctor's Database through use of improved prompt engineering for dealing with `SQL Database Module`.
-- Indicator on WhatsApp if the message takes longer than 15s to be delivered. (Better mechanism in-loop).
-- Improved backend capacity for handling larger data sources (150 comprehensive records of doctors phone numbers, emails, bio, expertise, etc + multiple blocks of webpages).
-- Save application with `CMD + S` on MacOS with live syncing.
+Interfaces - WhatsApp:
+- Save conversation history so the conversation feels more natural allowing you to reference back to previous information.
 
 ---
+## Release 1.0: Prototype for orchestrating UI, LLM, Tools, and Data Sources
+##### Release date: 12th July 2023
+---
 
-## 12th July 2023
-
-Version 1.0
 
 <Frame type="glass">
   <img style={{ borderRadius: "0.5rem" }} src="/images/v1.0_image.jpg" />
