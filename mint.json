@@ -5,11 +5,15 @@
     "dark": "/logo/logo.svg",
     "light": "/logo/black_logo.svg"
   },
-  "favicon": "/favicon.ico",
+  "favicon": "/favicon.png",
   "colors": {
-    "primary": "#090909",
+    "primary": "#ffffff",
     "light": "#ffffff",
-    "dark": "#090909"
+    "dark": "#19191d",
+    "background": {
+      "dark": "#09090b",
+      "light": "#ffffff"
+    }
   },
 
   "topbarCtaButton": {
@@ -21,6 +25,14 @@
     {
       "group": "",
       "pages": ["introduction", "release-notes"]
+    },
+    {
+      "group": "Release Notes",
+      "pages": [
+        "release-notes/release-1.2",
+        "release-notes/release-1.1",
+        "release-notes/release-1.0"
+      ]
     }
   ],
   "footerSocials": {
@@ -30,7 +42,7 @@
   },
   "backgroundImage": "/background.png",
   "modeToggle": {
-    "default": "light",
+    "default": "dark",
     "isHidden": true
   }
 }

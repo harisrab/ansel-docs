@@ -1,13 +1,9 @@
 ---
-title: "Release notes"
-description: "We're shipping features fast, building an operating system for governence."
+title: "Release 1.1"
+description: "Major Improvements for Interrogating Complex Databases and more"
 ---
 
 
----
-## Release 1.1: Major Improvements for Interrogating Complex Databases and more
-##### Release date: 18th July 2023
----
 
 <Frame type="glass">
   <img style={{ borderRadius: "0.5rem" }} src="/images/v1.1.png" />
@@ -37,6 +33,7 @@ For clinical operations, this release involves a number of improvements for grea
   </Accordion>
 
 {" "}
+
 <Accordion title="Can u find me doctors who have expertise in general cardiology?">
   One doctor with expertise in general cardiology is Dr. Kelvin K.W. Chan. His
   specialization includes assessment and management of cardiovascular risk
@@ -48,6 +45,7 @@ For clinical operations, this release involves a number of improvements for grea
 </Accordion>
 
 {" "}
+
 <Accordion title="Give me the phone number of Professor To Kelvin and also give me his profile page?">
   The phone number of Professor To Kelvin is +852-2255-2412, and his profile
   page can be found at
@@ -78,6 +76,7 @@ These are just a few examples of the institutions with which Professor To Kelvin
   </Accordion>
 
 {" "}
+
 <Accordion title="Give me all doctors who's name includes Gary.">
   There are two doctors with "Gary" in their name: Dr. Gary K.K. Yip and Dr Lau,
   Kui Kai Gary.
@@ -85,42 +84,18 @@ These are just a few examples of the institutions with which Professor To Kelvin
 
 </AccordionGroup>
 
-
-
 ### LLM Modules (Tools, Data sources, User Interfaces)
+
 Data sources - webpages:
+
 - Allows for adding and removing custom webpages that are automatically indexed in Vector database for LLM retrieval.
 - Indicators for the status of indexing state of all webpages.
 - Added support for connecting multiple modules for `Webpage Data Sources`.
 
 Tools - open internet access:
+
 - Now you can openly talk to internet and ask the chatbot about current events, locations of hospitals, hotlines, and much more.
 
 Interfaces - WhatsApp:
+
 - Save conversation history so the conversation feels more natural allowing you to reference back to previous information.
-
----
-## Release 1.0: Prototype for orchestrating UI, LLM, Tools, and Data Sources
-##### Release date: 12th July 2023
----
-
-
-<Frame type="glass">
-  <img style={{ borderRadius: "0.5rem" }} src="/images/v1.0_image.jpg" />
-</Frame>
-
-**New features:**
-
-- Drag and drop functionality for easily arranging and connecting pre-built modules.
-- The first iteration of a no-code platform that allows you to connect different:
-
-  - Data sources: (Custom Webpages and SQL databases)
-  - LLMs: Only ChatGPT Supported
-  - A single WhatsApp interface for communication with ChatGPT
-
-- Complete traversal of a graph based structure that prepares ground for customized orchestration of data sources, tools, and communication interfaces with LLMs.
-- Setup of exchanging WhatsApp message by requistioning phone number on demand.
-- Built functionality for adding more phone numbers if needed based on demand.
-- Scrapped and collected raw data for 3 clinics in Hong Kong. Available on Google Sheets + Remote SQL database.
-
----
