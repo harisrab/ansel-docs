@@ -3,10 +3,37 @@ title: "Latest - Release 1.2"
 description: "UI / UX Improvements + Authentication + Private Apps for different users + Global Store of WhatsApp Numbers, and more."
 ---
 
+<Tip>
+  **Upcoming:** We're building the Hydra Chat UI that can stream responses much
+  faster and allow for better formatting of responses including custom UI. Our
+  focus being medical industry, we'll be stress testing the use of medical tools
+  such as drug-drug, drug-food analysis using cited sources and make them
+  available as tools on the platform.
 
+We're also planning to add a way to track hallucinations, marking chats that may not be truthful allowing doctors to validate and improve the system in clinical practice. This will allow us to build gaurdrails and improve prompting in clinical operations setting.
 
-<Frame type="glass">
-  <img style={{ borderRadius: "0.5rem" }} src="/images/v1.1.png" />
+</Tip>
+
+<Frame>
+  <img style={{ borderRadius: "0.2rem" }} src="/images/release-1.2/cover.png" />
+</Frame>
+
+#### Authentication
+
+Since this is closed for certain users, we've implemented Google Sign in with Request Access that allows clinics to sign up, build their application, connect their databases, etc.
+
+This is very important as it:
+
+- Allows for clinics to build their own applications with their data and logic living in their account.
+- WhatsApp numbers can be allocated seperately to clinics. Previously this presented a scaling problem in case another client will be using the application.
+
+<Frame>
+
+  <img
+    style={{ borderRadius: "0.2rem" }}
+    src="/images/release-1.2/signin_page.png"
+  />
+ 
 </Frame>
 
 #### WhatsApp Module
@@ -16,9 +43,9 @@ This is the first iteration for the WhatsApp module that includes the following 
 - Use local and international phone numbers out of the box. No setup or programming required.
 - Translate interaction on the fly. Ask complex questions in any language and get response in the same language.
 
-<Frame type="glass">
+<Frame>
   <img
-    style={{ borderRadius: "0.5rem" }}
+    style={{ borderRadius: "0.2rem" }}
     src="/images/whatsapp_release_1.2_3.png"
   />
 </Frame>
@@ -33,9 +60,47 @@ This is central module that allows you to connect three important types of modul
 
 It has been improved to give options that can be selected such as the underlying Large Language Model.
 
-<Frame type="glass">
+<Frame>
   <img
-    style={{ borderRadius: "0.5rem" }}
+    style={{ borderRadius: "0.2rem" }}
     src="/images/autonomous_agent_release_1.2.png"
+  />
+</Frame>
+
+#### Web sources
+
+This module has been updated for improved UX that allows users to see which webpages and PDFs have been indexed.
+
+- States for loading, fail, and response.
+- Allows for easy deletion of webpages and PDFs from memory.
+- Side panel shows all the sources in detail along with module specific description.
+
+<Frame>
+  <img
+    style={{ borderRadius: "0.2rem" }}
+    src="/images/release-1.2/websources.png"
+  />
+</Frame>
+
+#### SQL Database source
+
+SQL Database module now provides more options to edit the details on database source and view metadata. This is useful for quickly editing prompts to make certain fixes possible without redeployment.
+
+- Setup custom database with a custom prompt template for querying database.
+- Out of the box template for entire database of doctors in Hong Kong (still being cleaned up and improved).
+
+<Frame>
+  <img style={{ borderRadius: "0.2rem" }} src="/images/release-1.2/sql2.png" />
+</Frame>
+
+#### Internet Tool
+
+As one of the first tools, we've added internet as a tool that can be used to fetch current information about personalities, locations, hot lines, etc. This is very useful to make the LLM up to date with current knowledge.
+We plan to add gaurdrails on this module, which information can be fetched or not fetched.
+
+<Frame>
+  <img
+    style={{ borderRadius: "0.2rem" }}
+    src="/images/release-1.2/internet.png"
   />
 </Frame>

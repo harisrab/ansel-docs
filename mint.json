@@ -24,7 +24,7 @@
   "navigation": [
     {
       "group": "",
-      "pages": ["introduction", "release-notes"]
+      "pages": ["introduction"]
     },
     {
       "group": "Release Notes",
